@@ -1,4 +1,4 @@
-# Playwright Test Suite
+# Playwright Test Suite - Login Assignment
 
 ## Description
 
@@ -22,6 +22,17 @@ This project automates the login functionality of the Practice Test Automation w
    npx playwright install
    ```
 
+## Environment Variables
+
+Create a `.env` file in the project root and add the following credentials:
+
+```env
+USERNAME=student
+PASSWORD=Password123
+```
+
+These credentials are used by the automated login tests.
+
 ## Usage
 
 Run the test suite using:
@@ -34,6 +45,23 @@ By default, the tests run in headless mode.
 
 For more information about Playwright, visit:
 https://playwright.dev/docs/intro
+
+## Project Structure
+
+```text
+pages/
+  LoginPage.ts
+
+tests/
+  login.spec.ts
+
+test-data/
+  testData.ts
+
+README.md
+TestCases.md
+playwright.config.ts
+```
 
 ## Page Objects
 

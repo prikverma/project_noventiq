@@ -1,4 +1,4 @@
-# Functional Test Cases for The Assignment: 
+# Functional Test Cases for Login Assignment: 
 
 ## Positive Test Cases
 
