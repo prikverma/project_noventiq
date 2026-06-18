@@ -1,2 +1,2 @@
-# project_noventiq
+# Project_Noventiq
 Assignment Repo
