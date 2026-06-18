@@ -2,30 +2,65 @@
 
 ## Description
 
-This project automates the login functionality of the Practice Test Automation website using Playwright and TypeScript.
+This project automates the login functionality of the Practice Test Automation website using Playwright and TypeScript. The framework uses the Page Object Model (POM) approach to keep the code organised and easy to maintain.
 
 ## Installation
 
 1. Clone the repository.
-2. Navigate to the project directory using your terminal, or open the project in VS Code.
-3. Install the dependencies by running `npm install` in the root directory of the project.
-4. Install the Playwright browser binaries by running `npx playwright install` in the root directory of the project.
+
+2. Open the project in VS Code or navigate to the project directory using a terminal.
+
+3. Install the project dependencies by running:
+
+   ```bash
+   npm install
+   ```
+
+4. Install the Playwright browsers by running:
+
+   ```bash
+   npx playwright install
+   ```
 
 ## Usage
 
-Run the test suite using `npx playwright test`. This will execute the tests in headless mode.
+Run the test suite using:
 
-For more information on running tests in different browsers and execution modes, refer to the official Playwright documentation:
+```bash
+npx playwright test
+```
+
+By default, the tests run in headless mode.
+
+For more information about Playwright, visit:
 https://playwright.dev/docs/intro
 
 ## Page Objects
 
-The `pages/` directory contains the page objects for the tests. Each page object is a class that contains the selectors and methods for interacting with the page. The page objects are used in the tests to interact with the page elements.
+The `pages/` folder contains the page objects used in the tests. These page objects contain the locators and methods needed to interact with the application pages.
 
 ## Configuration
 
-The Playwright configuration is described in the `playwright.config.ts` file. The configuration includes the browsers to run the tests in, the test files to run, and the test runner to use.
+The Playwright configuration can be found in the `playwright.config.ts` file. It contains settings such as browser configuration, reporters, and test execution options.
 
 ## Test Cases
 
-Functional test cases can be found in the `TestCases.md` file.
+The functional test cases for this assignment are available in the `TestCases.md` file.
+
+## Reporting
+
+This project uses Allure Reporter to generate test reports.
+
+Generate the report:
+
+```bash
+allure generate allure-results --clean -o allure-report
+```
+
+Open the report:
+
+```bash
+allure open allure-report
+```
+
+The report includes test execution results, pass/fail status, and failure details.
