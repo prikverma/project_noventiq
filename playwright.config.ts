@@ -9,11 +9,13 @@ export default defineConfig({
   retries: process.env.CI ? 2 : 0,
 
   workers: process.env.CI ? 1 : undefined,
-  reporter: 'html',
+  reporter: [['list'], ['html'], ['allure-playwright', { detail: true }]],
 
   use: {
-
-    trace: 'on-first-retry',
+    baseURL: 'https://practicetestautomation.com',
+    screenshot: 'only-on-failure',
+    trace: 'retain-on-failure',
+    video: "retain-on-failure-and-retries"
   },
 
   projects: [
@@ -22,15 +24,15 @@ export default defineConfig({
       use: { ...devices['Desktop Chrome'] },
     },
 
-    {
-      name: 'firefox',
-      use: { ...devices['Desktop Firefox'] },
-    },
+    // {
+    //   name: 'firefox',
+    //   use: { ...devices['Desktop Firefox'] },
+    // },
 
-    {
-      name: 'webkit',
-      use: { ...devices['Desktop Safari'] },
-    },
+    // {
+    //   name: 'webkit',
+    //   use: { ...devices['Desktop Safari'] },
+    // },
 
   ],
 });

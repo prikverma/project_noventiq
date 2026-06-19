@@ -1,83 +1,126 @@
-# Playwright Test Suite - Login Assignment
+# Playwright Login Automation Assignment
 
-## Description
+## About the Project
 
-This project automates the login functionality of the Practice Test Automation website using Playwright and TypeScript. The framework uses the Page Object Model (POM) approach to keep the code organised and easy to maintain.
+This project automates the login functionality of the Practice Test Automation website using Playwright and TypeScript.
 
-## Installation
+The framework follows the Page Object Model (POM) design pattern to improve code maintainability and reusability. Environment variables are used to manage test credentials, and Allure Reporter is integrated for reporting and test execution analysis.
 
-1. Clone the repository.
+---
 
-2. Open the project in VS Code or navigate to the project directory using a terminal.
+## Project Structure
 
-3. Install the project dependencies by running:
+```text
+project_noventiq/
+│
+├── .github/workflows/
+│   └── playwright.yml
+│
+├── pages/
+│   ├── loginPage.ts
+│   └── successPage.ts
+│
+├── tests/
+│   └── loginPage/
+│       └── Login.spec.ts
+│
+├── test-data/
+├── playwright-report/
+├── test-results/
+│
+├── .env
+├── playwright.config.ts
+├── package.json
+├── README.md
+└── TestCases.md
+```
 
-   ```bash
-   npm install
-   ```
+---
 
-4. Install the Playwright browsers by running:
+## Prerequisites
 
-   ```bash
-   npx playwright install
-   ```
+Make sure the following are installed on your machine:
+
+* Node.js
+* npm
+
+---
+
+## Setup
+
+Install the project dependencies:
+
+```bash
+npm install
+```
+
+Install Playwright browsers:
+
+```bash
+npx playwright install
+```
+
+---
 
 ## Environment Variables
 
-Create a `.env` file in the project root and add the following credentials:
+Create a `.env` file in the project root and add the following:
 
 ```env
-USERNAME=student
-PASSWORD=Password123
+LOGIN_USERNAME=student
+LOGIN_PASSWORD=Password123
 ```
 
-These credentials are used by the automated login tests.
+These credentials are used during test execution.
 
-## Usage
+---
 
-Run the test suite using:
+## Running the Tests
+
+Run all tests:
 
 ```bash
 npx playwright test
 ```
 
-By default, the tests run in headless mode.
+Run tests in headed mode:
 
-For more information about Playwright, visit:
-https://playwright.dev/docs/intro
-
-## Project Structure
-
-```text
-pages/
-  LoginPage.ts
-
-tests/
-  login.spec.ts
-
-test-data/
-  testData.ts
-
-README.md
-TestCases.md
-playwright.config.ts
+```bash
+npx playwright test --headed
 ```
 
-## Page Objects
+Run a specific test file:
 
-The `pages/` folder contains the page objects used in the tests. These page objects contain the locators and methods needed to interact with the application pages.
+```bash
+npx playwright test tests/loginPage/Login.spec.ts
+```
 
-## Configuration
+---
 
-The Playwright configuration can be found in the `playwright.config.ts` file. It contains settings such as browser configuration, reporters, and test execution options.
+## Test Coverage
 
-## Test Cases
+The automated tests cover the following scenarios:
 
-The functional test cases for this assignment are available in the `TestCases.md` file.
+* Login with valid credentials
+* Validation of successful login messages
+* Logout functionality
+* Login with invalid credentials
+
+---
+
+## Framework Design
+
+The framework uses the Page Object Model (POM) approach:
+
+* `loginPage.ts` contains the login page locators and actions.
+* `successPage.ts` contains validations for the successful login page.
+* Test data and credentials are maintained separately from the test scripts to keep the framework easier to manage and maintain.
+
+---
 
 ## Reporting
 
-This project uses Allure Reporter to generate test reports.
+Allure Reporter is used to generate detailed execution reports.
 
 Generate the report:
 
@@ -91,4 +134,18 @@ Open the report:
 allure open allure-report
 ```
 
-The report includes test execution results, pass/fail status, and failure details.
+---
+
+## Test Cases
+
+The functional test scenarios covered in this assignment are documented in:
+
+```text
+TestCases.md
+```
+
+---
+
+## Application Under Test
+
+https://practicetestautomation.com/practice-test-login/

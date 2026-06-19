@@ -51,7 +51,7 @@
 
 **Expected Result:**
 
-* Logout button is displayed.
+* Log out button is displayed.
 
 ---
 
@@ -64,7 +64,7 @@
 
 **Expected Result:**
 
-* User is logged out successfully.
+* User is logged out successfully on the login page.
 
 ---
 
@@ -111,7 +111,7 @@
 
 **Expected Result:**
 
-* Login fails and an error message is displayed.
+* Error message "Your username is invalid!" is displayed.
 
 ---
 
@@ -126,7 +126,7 @@
 
 **Expected Result:**
 
-* Login fails and an error message is displayed.
+* Error message "Your username is invalid!" is displayed.
 
 ---
 
@@ -141,4 +141,4 @@
 
 **Expected Result:**
 
-* Login should not be successful or the spaces should be handled correctly.
+* Error message "Your username is invalid!" is displayed.
